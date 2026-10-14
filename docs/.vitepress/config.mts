@@ -1,16 +1,25 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "Онлайн-школа Sardana",
-  description: "Добро пожаловать!",
+  title: "Sardana Online",
+  description: "Онлайн-школа бисероплетения",
   lang: 'ru-RU',
+  base: '/main/',
   themeConfig: {
     nav: [
       { text: 'Главная', link: '/' },
-      { text: 'Уроки', link: '/lections/' },
+      { text: 'Уроки', link: '/lessons/' },
     ],
     search: {
       provider: 'local'
-    }
+    },
+    sidebar: [
+      {
+        text: 'Жми уже быстрее!',
+        items: [
+          { text: 'НАЖМИ СЮДА', link: '/' },
+        ]
+      }
+    ]
   }
 })
