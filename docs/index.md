@@ -23,7 +23,7 @@ hero:
 
 <div class="hero-logo-wrap">
   <div class="hero-logo">
-    <img src="/images/logo.jpg" alt="Логотип школы" />
+    <img src="/images/icon.jpg" alt="Логотип школы" />
   </div>
   <div class="hero-logo__plate">
     <h1 class="hero-logo__title">Детская Онлайн-школа<br>Бисероплетения</h1>
@@ -36,9 +36,8 @@ hero:
   <h2 class="carousel__title">ТЕСТ</h2>
   <div class="carousel__track">
     <figure class="carousel__item"><img src="/images/hero.jpg" alt="Работа 1"></figure>
-    <figure class="carousel__item"><img src="/images/logo.jpg" alt="Работа 2"></figure>
     <figure class="carousel__item"><img src="/images/teacher.jpg" alt="Работа 3"></figure>
-    <figure class="carousel__item"><img src="/images/hero.jpg" alt="Работа 4"></figure>
+    <figure class="carousel__item"><img src="/images/icon.jpg" alt="Работа 4"></figure>
   </div>
 </section>
 
@@ -153,7 +152,7 @@ hero:
   <p class="reviews__lead">Самый лучший учитель — это тот, к которому дети бегут на уроки, чтобы получить знания.</p>
   <div class="reviews__track">
     <img src="/images/hero.jpg" alt="">
-    <img src="/images/logo.jpg" alt="">
+    <img src="/images/icon.jpg" alt="">
     <img src="/images/teacher.jpg" alt="">
   </div>
 </section>
