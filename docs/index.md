@@ -124,7 +124,7 @@ hero:
     <p>Сделайте их вместе — со временем эти изделия станут тёплыми воспоминаниями и сблизят Вас.</p>
   </div>
   <div class="split__media">
-    <img src="/images/hero.jpg" alt="Видеоэкскурсия">
+    <img src="/images/title.jpg" alt="Видеоэкскурсия">
   </div>
 </section>
 
