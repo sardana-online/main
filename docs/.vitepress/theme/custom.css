@@ -1,1 +1,408 @@
+/* ═══════════════════════════════════════════════════════════
+   SARDANA ONLINE — кастомная тема
+   Палитра: салатовая #CCFFAA, чёрный, белый, золото-акцент
+   Шрифт: Georgia (serif)
+   ═══════════════════════════════════════════════════════════ */
 
+/* ── Переменные VitePress (тема перекрашивается целиком) ── */
+:root {
+  --vp-c-brand-1: #6b8f3a;
+  --vp-c-brand-2: #5c7d33;
+  --vp-c-brand-3: #4a6629;
+  --vp-c-brand-soft: rgba(140, 200, 80, 0.16);
+
+  --vp-font-family-base: Georgia, 'Times New Roman', serif;
+  --vp-font-family-mono: 'Courier New', monospace;
+
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f7fff0;
+  --vp-c-bg-soft: #f3ffe8;
+
+  --sardana-green: #ccffaa;
+  --sardana-green-deep: #a8e07a;
+  --sardana-black: #111111;
+
+  --vp-nav-bg-color: #111111;
+  --vp-nav-height: 64px;
+
+  /* Отступы секций */
+  --sec-pad-y: 72px;
+  --sec-pad-x: 24px;
+}
+
+/* ── Меню (Nav) — чёрное ── */
+.VPNav,
+.VPNavBar,
+.VPNavBar .container,
+.VPNavBar.has-sidebar .content {
+  background-color: var(--sardana-black) !important;
+  border-bottom: none !important;
+}
+.VPNavBar .title,
+.VPNavBar .VPNavBarTitle .title,
+.VPNavBarMenuLink,
+.VPNavBarMenu a {
+  color: #ffffff !important;
+  font-family: var(--vp-font-family-base);
+}
+.VPNavBarMenuLink:hover,
+.VPNavBarMenu a:hover {
+  color: var(--sardana-green) !important;
+}
+.VPNavBarSearch .DocSearch-Button,
+.VPNavBar .VPNavBarSearch button {
+  background: rgba(255,255,255,0.08) !important;
+  color: #fff !important;
+}
+.VPNavBarHamburger .top,
+.VPNavBarHamburger .middle,
+.VPNavBarHamburger .bottom {
+  background-color: #fff !important;
+}
+
+/* Скрыть дефолтный hero VitePress — у нас свой */
+.VPHome .VPHero,
+.VPHome .VPFeatures {
+  display: none !important;
+}
+
+/* Спрятать боковое меню на главной, чтобы не мешало */
+.VPDoc.has-aside .content-container,
+.VPDoc .aside {
+  /* оставлено на будущее */
+}
+
+/* Общие стили контента */
+.VPDoc .content-container {
+  max-width: 1100px !important;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--vp-font-family-base);
+  letter-spacing: 0.2px;
+  color: var(--sardana-black);
+}
+
+.VPDoc h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO-ФОТО + ЛОГОТИП-КРУГ
+   ═══════════════════════════════════════════════════════════ */
+
+.hero-photo {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: calc(-1 * var(--vp-nav-height));
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.hero-photo__bg {
+  display: block;
+  width: 100%;
+  height: 60vh;
+  min-height: 380px;
+  object-fit: cover;
+}
+
+.hero-logo-wrap {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: #ffffff;
+  padding-bottom: 40px;
+  text-align: center;
+}
+.hero-logo {
+  width: 180px;
+  height: 180px;
+  margin: -90px auto 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 2;
+}
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-logo__plate {
+  margin-top: 24px;
+}
+.hero-logo__title {
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   КАРУСЕЛЬ (CSS scroll-snap, без JS)
+   ═══════════════════════════════════════════════════════════ */
+
+.carousel {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: var(--sec-pad-y) 0;
+  background: #ffffff;
+  text-align: center;
+}
+.carousel__title {
+  font-size: 36px;
+  margin-bottom: 32px;
+}
+.carousel__track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 24px 24px;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel__track::-webkit-scrollbar {
+  height: 8px;
+}
+.carousel__track::-webkit-scrollbar-thumb {
+  background: var(--sardana-green-deep);
+  border-radius: 4px;
+}
+.carousel__item {
+  flex: 0 0 auto;
+  width: 320px;
+  height: 240px;
+  scroll-snap-align: center;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  margin: 0;
+}
+.carousel__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   БЛОКИ С БУСИНАМИ (3 и 4 колонки) — салатовый фон
+   ═══════════════════════════════════════════════════════════ */
+
+.beads {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: var(--sec-pad-y) var(--sec-pad-x);
+  background: var(--sardana-green);
+  text-align: center;
+}
+.beads h2 {
+  font-size: 40px;
+  margin: 0 0 16px;
+}
+.beads__lead {
+  font-size: 20px;
+  margin: 0 0 56px;
+  color: #2a3a1a;
+}
+.beads__grid {
+  display: grid;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.beads--3 .beads__grid { grid-template-columns: repeat(3, 1fr); }
+.beads--4 .beads__grid { grid-template-columns: repeat(4, 1fr); }
+
+.bead img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 16px;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+}
+.bead h3 {
+  font-size: 22px;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+.bead p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1e2a12;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ПРИЯТНО ПОЗНАКОМИТЬСЯ (фото + текст)
+   ═══════════════════════════════════════════════════════════ */
+
+.about {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: var(--sec-pad-y) var(--sec-pad-x);
+  background: #ffffff;
+}
+.about h2 {
+  text-align: center;
+  font-size: 40px;
+  margin: 0 0 48px;
+}
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+.about__photo img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.about__text h3 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+.about__role {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #444;
+}
+.about__text ul {
+  padding-left: 20px;
+}
+.about__text li {
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ПОДХОДИТ ДЕТЯМ (текст + видео)
+   ═══════════════════════════════════════════════════════════ */
+
+.split {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: var(--sec-pad-y) var(--sec-pad-x);
+  background: var(--sardana-green);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.split__text { max-width: 520px; margin-left: auto; }
+.split__text h2 { font-size: 36px; margin: 0 0 20px; }
+.split__text p { font-size: 17px; line-height: 1.6; }
+.split__media { max-width: 520px; margin-right: auto; }
+.split__media img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CTA — белая плашка
+   ═══════════════════════════════════════════════════════════ */
+
+.cta {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: var(--sec-pad-y) var(--sec-pad-x);
+  background: #ffffff;
+  text-align: center;
+}
+.cta h2 { font-size: 36px; margin: 0 0 16px; }
+.cta p { font-size: 17px; line-height: 1.6; max-width: 720px; margin: 8px auto; }
+.cta ol {
+  text-align: left;
+  display: inline-block;
+  margin: 16px auto 24px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.cta__promo {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 32px !important;
+}
+.cta__button-wrap { margin-top: 16px; }
+.cta__button {
+  display: inline-block;
+  background: var(--sardana-black);
+  color: #fff !important;
+  padding: 16px 40px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: transform .15s, background .2s;
+}
+.cta__button:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ОТЗЫВЫ — карусель #2
+   ═══════════════════════════════════════════════════════════ */
+
+.reviews {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: var(--sec-pad-y) var(--sec-pad-x);
+  background: var(--sardana-green);
+  text-align: center;
+}
+.reviews h2 { font-size: 36px; margin: 0 0 16px; }
+.reviews__lead { font-size: 18px; margin: 0 0 40px; color: #2a3a1a; }
+.reviews__track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 24px 16px;
+  -webkit-overflow-scrolling: touch;
+}
+.reviews__track img {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  scroll-snap-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.reviews__track::-webkit-scrollbar { height: 8px; }
+.reviews__track::-webkit-scrollbar-thumb {
+  background: var(--sardana-black);
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   АДАПТИВ
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 960px) {
+  .beads--3 .beads__grid,
+  .beads--4 .beads__grid { grid-template-columns: repeat(2, 1fr); }
+  .about__grid { grid-template-columns: 1fr; }
+  .split { grid-template-columns: 1fr; text-align: center; }
+  .split__text, .split__media { margin: 0 auto; }
+  .hero-logo__title { font-size: 32px; }
+  .hero-logo { width: 140px; height: 140px; margin-top: -70px; }
+}
+
+@media (max-width: 640px) {
+  .beads--3 .beads__grid,
+  .beads--4 .beads__grid { grid-template-columns: 1fr; }
+  .beads h2, .about h2 { font-size: 30px; }
+  .hero-logo__title { font-size: 26px; }
+  .carousel__item { width: 260px; height: 200px; }
+}
