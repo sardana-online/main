@@ -18,7 +18,7 @@ hero:
 <!-- ═══════════════ HERO-ФОТО С ЛОГОТИПОМ ═══════════════ -->
 
 <div class="hero-photo">
-  <img src="/images/hero.jpg" alt="" class="hero-photo__bg" />
+  <img src="/images/title.jpg" alt="" class="hero-photo__bg" />
 </div>
 
 <div class="hero-logo-wrap">
@@ -35,7 +35,7 @@ hero:
 <section class="carousel">
   <h2 class="carousel__title">ТЕСТ</h2>
   <div class="carousel__track">
-    <figure class="carousel__item"><img src="/images/hero.jpg" alt="Работа 1"></figure>
+    <figure class="carousel__item"><img src="/images/title.jpg" alt="Работа 1"></figure>
     <figure class="carousel__item"><img src="/images/teacher.jpg" alt="Работа 3"></figure>
     <figure class="carousel__item"><img src="/images/icon.jpg" alt="Работа 4"></figure>
   </div>
@@ -151,7 +151,7 @@ hero:
   <h2>Слово ученикам об учителе</h2>
   <p class="reviews__lead">Самый лучший учитель — это тот, к которому дети бегут на уроки, чтобы получить знания.</p>
   <div class="reviews__track">
-    <img src="/images/hero.jpg" alt="">
+    <img src="/images/title.jpg" alt="">
     <img src="/images/icon.jpg" alt="">
     <img src="/images/teacher.jpg" alt="">
   </div>
