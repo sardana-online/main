@@ -1,18 +1,6 @@
 ---
 layout: home
 title: Детская Онлайн-школа Бисероплетения
-
-hero:
-  name: Детская Онлайн-школа
-  text: Бисероплетения
-  tagline: Анимированные схемы, постепенное усложнение и реальные изделия в конце каждого занятия
-  actions:
-    - theme: brand
-      text: Начать обучение
-      link: /lessons/
-    - theme: alt
-      text: Узнать больше
-      link: /about/
 ---
 
 <!-- ═══════════════ HERO-ФОТО С ЛОГОТИПОМ ═══════════════ -->
@@ -26,7 +14,7 @@ hero:
     <img src="/images/icon.jpg" alt="Логотип школы" />
   </div>
   <div class="hero-logo__plate">
-    <h1 class="hero-logo__title">Детская Онлайн-школа<br>Бисероплетения</h1>
+    <h1 class="hero-logo__title">Детская Онлайн-школа бисероплетения</h1>
   </div>
 </div>
 
