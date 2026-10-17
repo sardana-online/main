@@ -22,41 +22,43 @@ title: Детская Онлайн-школа Бисероплетения
 
 <section class="slider">
   <div class="slider__viewport">
-    <div class="slider__slide" id="slide-1" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/title.jpg')">
+    <div class="slider__slide">
+      <img class="slider__slide-bg" src="/images/title.jpg" alt="">
       <div class="slider__content">
-        <h1>Создавайте красоту и развивайте потенциал!</h1>
+        <h2>Создавайте красоту и развивайте потенциал!</h2>
         <p>Добро пожаловать в мир, где бисер превращается в произведения искусства! Наши онлайн‑уроки помогут вам или вашему ребёнку не просто освоить бисероплетение — а открыть в себе творческий ресурс и укрепить ментальное здоровье.</p>
         <a href="#" class="slider__btn">Узнать больше</a>
       </div>
     </div>
-    <div class="slider__slide" id="slide-2" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/teacher.jpg')">
+    <div class="slider__slide">
+      <img class="slider__slide-bg" src="/images/teacher.jpg" alt="">
       <div class="slider__content">
-        <h1>Мастер-классы от профессионалов</h1>
+        <h2>Мастер-классы от профессионалов</h2>
         <p>Наши опытные преподаватели поделятся секретами мастерства и помогут вам развить навыки бисероплетения любого уровня сложности.</p>
         <a href="#" class="slider__btn">Узнать больше</a>
       </div>
     </div>
-    <div class="slider__slide" id="slide-3" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/title.jpg')">
+    <div class="slider__slide">
+      <img class="slider__slide-bg" src="/images/title.jpg" alt="">
       <div class="slider__content">
-        <h1>Сообщество единомышленников</h1>
+        <h2>Сообщество единомышленников</h2>
         <p>Присоединяйтесь к нашему дружному сообществу любителей бисероплетения. Общайтесь, делитесь идеями и вдохновляйтесь работами других участников.</p>
         <a href="#" class="slider__btn">Вступить в сообщество</a>
       </div>
     </div>
-    <div class="slider__slide" id="slide-4" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/teacher.jpg')">
+    <div class="slider__slide">
+      <img class="slider__slide-bg" src="/images/teacher.jpg" alt="">
       <div class="slider__content">
-        <h1>Материалы и инструменты</h1>
+        <h2>Материалы и инструменты</h2>
         <p>Наши педагоги научат Вас выбрать качественные и недорогие материалы и инструменты для бисероплетения.</p>
         <a href="#" class="slider__btn">Выбрать материалы</a>
       </div>
     </div>
   </div>
 
-  <!-- Стрелки -->
   <button type="button" class="slider__arrow slider__arrow--prev" aria-label="Предыдущий слайд">‹</button>
   <button type="button" class="slider__arrow slider__arrow--next" aria-label="Следующий слайд">›</button>
 
-  <!-- Точки -->
   <div class="slider__dots">
     <button type="button" class="slider__dot" data-slide="0" aria-label="Слайд 1"></button>
     <button type="button" class="slider__dot" data-slide="1" aria-label="Слайд 2"></button>
