@@ -20,12 +20,48 @@ title: Детская Онлайн-школа Бисероплетения
 
 <!-- ═══════════════ КАРУСЕЛЬ #1 (заглушка) ═══════════════ -->
 
-<section class="carousel">
-  <h2 class="carousel__title">ТЕСТ</h2>
-  <div class="carousel__track">
-    <figure class="carousel__item"><img src="/images/title.jpg" alt="Работа 1"></figure>
-    <figure class="carousel__item"><img src="/images/teacher.jpg" alt="Работа 3"></figure>
-    <figure class="carousel__item"><img src="/images/icon.jpg" alt="Работа 4"></figure>
+<section class="slider">
+  <div class="slider__viewport">
+    <div class="slider__slide" id="slide-1" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/title.jpg')">
+      <div class="slider__content">
+        <h1>Заголовок 1</h1>
+        <p>Подзаголовок 1</p>
+        <a href="#" class="slider__btn">Кнопка 1</a>
+      </div>
+    </div>
+    <div class="slider__slide" id="slide-2" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/teacher.jpg')">
+      <div class="slider__content">
+        <h1>Заголовок 2</h1>
+        <p>Подзаголовок 2</p>
+        <a href="#" class="slider__btn">Кнопка 2</a>
+      </div>
+    </div>
+    <div class="slider__slide" id="slide-3" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/title.jpg')">
+      <div class="slider__content">
+        <h1>Заголовок 3</h1>
+        <p>Подзаголовок 3</p>
+        <a href="#" class="slider__btn">Кнопка 3</a>
+      </div>
+    </div>
+    <div class="slider__slide" id="slide-4" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/teacher.jpg')">
+      <div class="slider__content">
+        <h1>Заголовок 4</h1>
+        <p>Подзаголовок 4</p>
+        <a href="#" class="slider__btn">Кнопка 4</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Стрелки -->
+  <button type="button" class="slider__arrow slider__arrow--prev" aria-label="Предыдущий слайд">‹</button>
+  <button type="button" class="slider__arrow slider__arrow--next" aria-label="Следующий слайд">›</button>
+
+  <!-- Точки -->
+  <div class="slider__dots">
+    <button type="button" class="slider__dot" data-slide="0" aria-label="Слайд 1"></button>
+    <button type="button" class="slider__dot" data-slide="1" aria-label="Слайд 2"></button>
+    <button type="button" class="slider__dot" data-slide="2" aria-label="Слайд 3"></button>
+    <button type="button" class="slider__dot" data-slide="3" aria-label="Слайд 4"></button>
   </div>
 </section>
 
@@ -144,3 +180,30 @@ title: Детская Онлайн-школа Бисероплетения
     <img src="/images/teacher.jpg" alt="">
   </div>
 </section>
+
+<!-- ═══════════════ ВЛЕВО-ВПРАВО ═══════════════ -->
+
+<script setup>
+import { onMounted } from 'vue'
+onMounted(() => {
+  const vp = document.querySelector('.slider__viewport')
+  if (!vp) return
+  const slides = vp.querySelectorAll('.slider__slide')
+  const total = slides.length
+
+  const goTo = (i) => {
+    const clamped = Math.max(0, Math.min(total - 1, i))
+    vp.scrollTo({ left: vp.clientWidth * clamped, behavior: 'smooth' })
+  }
+
+  document.querySelector('.slider__arrow--prev')?.addEventListener('click', () => {
+    goTo(Math.round(vp.scrollLeft / vp.clientWidth) - 1)
+  })
+  document.querySelector('.slider__arrow--next')?.addEventListener('click', () => {
+    goTo(Math.round(vp.scrollLeft / vp.clientWidth) + 1)
+  })
+  document.querySelectorAll('.slider__dot').forEach(dot => {
+    dot.addEventListener('click', () => goTo(Number(dot.dataset.slide)))
+  })
+})
+</script>
