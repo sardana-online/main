@@ -505,3 +505,18 @@ h1, h2, h3, h4 {
   .hero-logo__title { font-size: 26px; }
   .carousel__item { width: 260px; height: 200px; }
 }
+
+/* Убить всё, что рисует полоску над h2 */
+h2 { border-top: none !important; }
+h2 + h2 { margin-top: 0 !important; }
+hr { 
+  border: none !important;
+  display: none !important;
+}
+.vp-doc hr { display: none !important; }
+
+/* Убить подчёркивание в кнопках */
+.slider__btn,
+.cta__button {
+  text-decoration: none !important;
+}
