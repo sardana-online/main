@@ -528,10 +528,10 @@ html, body {
   object-fit: cover;
 }
 
-/* Для мобилы делаем блок еще шире (3:1), чтобы текст не обрезался по бокам */
+/* Для мобилы делаем блок, чтобы текст не обрезался по бокам */
 @media (max-width: 768px) {
   .hero-photo__bg {
-    aspect-ratio: 3 / 1;
+    aspect-ratio: 7 / 4;
     height: auto;
     min-height: unset; /* Убираем старое ограничение в 380px! */
   }
