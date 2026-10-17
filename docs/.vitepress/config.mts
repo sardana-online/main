@@ -5,21 +5,15 @@ export default defineConfig({
   description: "Онлайн-школа бисероплетения",
   lang: 'ru-RU',
   base: '/main/',
+
+  appearance: false, 
+
   themeConfig: {
     nav: [
-      { text: 'Главная', link: '/' },
-      { text: 'Уроки', link: '/lessons/' },
+      { text: 'Модули', link: '/lessons/' },
     ],
     search: {
       provider: 'local'
-    },
-    sidebar: [
-      {
-        text: 'Жми уже быстрее!',
-        items: [
-          { text: 'НАЖМИ СЮДА', link: '/' },
-        ]
-      }
-    ]
+    }
   }
 })
