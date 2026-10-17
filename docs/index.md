@@ -24,30 +24,30 @@ title: Детская Онлайн-школа Бисероплетения
   <div class="slider__viewport">
     <div class="slider__slide" id="slide-1" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/title.jpg')">
       <div class="slider__content">
-        <h1>Заголовок 1</h1>
-        <p>Подзаголовок 1</p>
-        <a href="#" class="slider__btn">Кнопка 1</a>
+        <h1>Создавайте красоту и развивайте потенциал!</h1>
+        <p>Добро пожаловать в мир, где бисер превращается в произведения искусства! Наши онлайн‑уроки помогут вам или вашему ребёнку не просто освоить бисероплетение — а открыть в себе творческий ресурс и укрепить ментальное здоровье.</p>
+        <a href="#" class="slider__btn">Узнать больше</a>
       </div>
     </div>
     <div class="slider__slide" id="slide-2" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/teacher.jpg')">
       <div class="slider__content">
-        <h1>Заголовок 2</h1>
-        <p>Подзаголовок 2</p>
-        <a href="#" class="slider__btn">Кнопка 2</a>
+        <h1>Мастер-классы от профессионалов</h1>
+        <p>Наши опытные преподаватели поделятся секретами мастерства и помогут вам развить навыки бисероплетения любого уровня сложности.</p>
+        <a href="#" class="slider__btn">Узнать больше</a>
       </div>
     </div>
     <div class="slider__slide" id="slide-3" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/title.jpg')">
       <div class="slider__content">
-        <h1>Заголовок 3</h1>
-        <p>Подзаголовок 3</p>
-        <a href="#" class="slider__btn">Кнопка 3</a>
+        <h1>Сообщество единомышленников</h1>
+        <p>Присоединяйтесь к нашему дружному сообществу любителей бисероплетения. Общайтесь, делитесь идеями и вдохновляйтесь работами других участников.</p>
+        <a href="#" class="slider__btn">Вступить в сообщество</a>
       </div>
     </div>
     <div class="slider__slide" id="slide-4" style="background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/images/teacher.jpg')">
       <div class="slider__content">
-        <h1>Заголовок 4</h1>
-        <p>Подзаголовок 4</p>
-        <a href="#" class="slider__btn">Кнопка 4</a>
+        <h1>Материалы и инструменты</h1>
+        <p>Наши педагоги научат Вас выбрать качественные и недорогие материалы и инструменты для бисероплетения.</p>
+        <a href="#" class="slider__btn">Выбрать материалы</a>
       </div>
     </div>
   </div>
@@ -190,20 +190,35 @@ onMounted(() => {
   if (!vp) return
   const slides = vp.querySelectorAll('.slider__slide')
   const total = slides.length
+  const dots = document.querySelectorAll('.slider__dot')
 
   const goTo = (i) => {
     const clamped = Math.max(0, Math.min(total - 1, i))
     vp.scrollTo({ left: vp.clientWidth * clamped, behavior: 'smooth' })
   }
 
+  // Обновляем активную точку
+  const updateDots = () => {
+    const idx = Math.round(vp.scrollLeft / vp.clientWidth)
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === idx))
+  }
+
+  // Стрелки
   document.querySelector('.slider__arrow--prev')?.addEventListener('click', () => {
     goTo(Math.round(vp.scrollLeft / vp.clientWidth) - 1)
   })
   document.querySelector('.slider__arrow--next')?.addEventListener('click', () => {
     goTo(Math.round(vp.scrollLeft / vp.clientWidth) + 1)
   })
-  document.querySelectorAll('.slider__dot').forEach(dot => {
+
+  // Точки
+  dots.forEach(dot => {
     dot.addEventListener('click', () => goTo(Number(dot.dataset.slide)))
   })
+
+  // Следим за скроллом (свайп, стрелки, клик по точке — всё сюда прилетит)
+  vp.addEventListener('scroll', updateDots, { passive: true })
+  window.addEventListener('resize', updateDots)
+  updateDots()  // подсветить первую при загрузке
 })
 </script>
