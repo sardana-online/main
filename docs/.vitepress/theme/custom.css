@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════
    SARDANA ONLINE — кастомная тема
-   Палитра: салатовая #CCFFAA, чёрный, белый, золото-акцент
+   Палитра: салатовая #E0FFA0, чёрный, белый, золото-акцент
    Шрифт: Georgia (serif)
    ═══════════════════════════════════════════════════════════ */
 
@@ -18,7 +18,7 @@
   --vp-c-bg-alt: #f7fff0;
   --vp-c-bg-soft: #f3ffe8;
 
-  --sardana-green: #ccffaa;
+  --sardana-green: #e0ffa0;
   --sardana-green-deep: #a8e07a;
   --sardana-black: #111111;
 
@@ -141,51 +141,119 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   КАРУСЕЛЬ (CSS scroll-snap, без JS)
-   ═══════════════════════════════════════════════════════════ */
+/* ═══════════════ СЛАЙДЕР НА CSS SCROLL-SNAP ═══════════════ */
 
-.carousel {
+.slider {
+  position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding: var(--sec-pad-y) 0;
-  background: #ffffff;
-  text-align: center;
 }
-.carousel__title {
-  font-size: 36px;
-  margin-bottom: 32px;
-}
-.carousel__track {
+
+.slider__viewport {
   display: flex;
-  gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 0 24px 24px;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
-.carousel__track::-webkit-scrollbar {
-  height: 8px;
+.slider__viewport::-webkit-scrollbar { display: none; }
+
+.slider__slide {
+  flex: 0 0 100%;
+  aspect-ratio: 2 / 1;                 /* ПК: 2:1 */
+  scroll-snap-align: start;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
-.carousel__track::-webkit-scrollbar-thumb {
-  background: var(--sardana-green-deep);
-  border-radius: 4px;
+
+.slider__content {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
-.carousel__item {
-  flex: 0 0 auto;
-  width: 320px;
-  height: 240px;
-  scroll-snap-align: center;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+
+.slider__content h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 4.5vw, 64px);
+  color: #fff;
   margin: 0;
+  text-shadow: 0 2px 12px rgba(0,0,0,.45);
 }
-.carousel__item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+
+.slider__content p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(16px, 1.6vw, 22px);
+  color: #fff;
+  max-width: 700px;
+  margin: 0;
+  text-shadow: 0 1px 8px rgba(0,0,0,.45);
+}
+
+.slider__btn {
+  background: #ff6a4d;
+  color: #fff !important;
+  padding: 18px 44px;
+  border-radius: 40px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .15s, background .2s;
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+}
+.slider__btn:hover { background: #ff8168; transform: translateY(-2px); }
+
+.slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.slider__arrow--prev { left: 24px; }
+.slider__arrow--next { right: 24px; }
+.slider__arrow:hover { background: rgba(255,255,255,.45); }
+
+.slider__dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 2;
+}
+.slider__dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: transparent;
+}
+.slider__dot:hover { background: rgba(255,255,255,.5); }
+
+@media (max-width: 768px) {
+  .slider__slide { aspect-ratio: 1 / 2; }   /* мобила: 1:2 */
+  .slider__arrow { width: 40px; height: 40px; font-size: 24px; }
+  .slider__arrow--prev { left: 8px; }
+  .slider__arrow--next { right: 8px; }
 }
 
 /* ═══════════════════════════════════════════════════════════
