@@ -500,7 +500,7 @@ h1, h2, h3, h4 {
   .carousel__item { width: 260px; height: 200px; }
 }
 
-/* Убить всё, что рисует полоску над h2 */
+/* ЗАПРЕТИТЬ ПОЛОСКИ */
 h2 { border-top: none !important; }
 h2 + h2 { margin-top: 0 !important; }
 hr { 
@@ -509,8 +509,13 @@ hr {
 }
 .vp-doc hr { display: none !important; }
 
-/* Убить подчёркивание в кнопках */
+/* ЗАПРЕТИТЬ ПОДЧЁРКИВАНИЕ */
 .slider__btn,
 .cta__button {
   text-decoration: none !important;
+}
+
+/* ЗАПРЕТИТЬ ПОЛЗУНОК */
+html, body {
+  overflow-x: hidden;
 }
