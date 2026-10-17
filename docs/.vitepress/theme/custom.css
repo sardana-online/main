@@ -182,9 +182,9 @@ h1, h2, h3, h4 {
   gap: 20px;
 }
 
-.slider__content h1 {
+.slider__content h2 {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(28px, 4.5vw, 64px);
+  font-size: clamp(24px, 5.5vw, 64px);
   color: #fff;
   margin: 0;
   text-shadow: 0 2px 12px rgba(0,0,0,.45);
@@ -254,6 +254,8 @@ h1, h2, h3, h4 {
   padding: 0;
 }
 .slider__dot:hover { background: rgba(255,255,255,.5); }
+
+.slider__dot.is-active { background: #fff; }
 
 @media (max-width: 768px) {
   .slider__slide { aspect-ratio: 1 / 2; }   /* мобила: 1:2 */
