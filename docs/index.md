@@ -166,20 +166,8 @@ title: Детская Онлайн-школа Бисероплетения
   </ol>
   <p>Присоединяйтесь к сообществу творцов — создавайте красоту и развивайтесь вместе с нами!</p>
   <p class="cta__promo">Сохраните Ваш промокод:</p>
-  <div class="cta__button-wrap">
-    <a class="cta__button" href="#">ПОЛУЧИТЬ ПРОМОКОД</a>
-  </div>
-</section>
-
-<!-- ═══════════════ СЛОВО УЧЕНИКАМ (карусель #2) ═══════════════ -->
-
-<section class="reviews">
-  <h2>Слово ученикам об учителе</h2>
-  <p class="reviews__lead">Самый лучший учитель — это тот, к которому дети бегут на уроки, чтобы получить знания.</p>
-  <div class="reviews__track">
-    <img src="/images/title.jpg" alt="">
-    <img src="/images/icon.jpg" alt="">
-    <img src="/images/teacher.jpg" alt="">
+  <div class="slider__btn">
+    <a href="#" class="slider__btn">получить урок бесплатно</a>
   </div>
 </section>
 
