@@ -193,11 +193,11 @@ title: Детская Онлайн-школа Бисероплетения
 
 <section id="social-links" style="text-align: center; padding: 40px 20px; background: #ffffff;">
   <h2>Присоединяйтесь к нам</h2>
-  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
-    <a href="https://t.me/SARDANAbot?start=s=3549041" target="_blank" style="background: #0088cc; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">Telegram</a>
-    <a href="https://max.ru/id143408680451_biz" target="_blank" style="background: #8844ff; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">MAX</a>
-    <a href="https://vk.com/app5898182_-232539769#s=3406092" target="_blank" style="background: #0077ff; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">ВК</a>
-    <a href="https://mail.yandex.ru/compose?to=eu.varl4mova@yandex.ru" target="_blank" style="background: #ff4444; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">Почта</a>
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <a href="https://t.me/SARDANAbot?start=s=3549041" target="_blank" style="background: #0088cc; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; flex: 1; text-align: center; box-sizing: border-box;">Telegram</a>
+    <a href="https://max.ru/id143408680451_biz" target="_blank" style="background: #8844ff; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; flex: 1; text-align: center; box-sizing: border-box;">MAX</a>
+    <a href="https://vk.com/app5898182_-232539769#s=3406092" target="_blank" style="background: #0077ff; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; flex: 1; text-align: center; box-sizing: border-box;">ВК</a>
+    <a href="https://mail.yandex.ru/compose?to=eu.varl4mova@yandex.ru" target="_blank" style="background: #ff4444; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; flex: 1; text-align: center; box-sizing: border-box;">Почта</a>
   </div>
 </section>
 
