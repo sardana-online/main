@@ -306,11 +306,13 @@ h1, h2, h3, h4 {
 .bead img {
   width: 120px;
   height: 120px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
   display: block;
   margin: 0 auto 16px;
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
 }
+
 .bead h3 {
   font-size: 22px;
   margin: 0 0 12px;
@@ -535,4 +537,12 @@ html, body {
     height: auto;
     min-height: unset; /* Убираем старое ограничение в 380px! */
   }
+}
+
+/* Белые иконки соцсетей в шапке */
+.VPSocialLink {
+  color: #ffffff !important;
+}
+.VPSocialLink:hover {
+  color: var(--sardana-green) !important; /* при наведении — салатовый (или любой другой) */
 }
