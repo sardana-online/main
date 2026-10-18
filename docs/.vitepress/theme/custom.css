@@ -546,3 +546,64 @@ html, body {
 .VPSocialLink:hover {
   color: var(--sardana-green) !important; /* при наведении — салатовый (или любой другой) */
 }
+
+/* ═══════════════════════════════════════════════════════════
+   КАРУСЕЛЬ ОТЗЫВОВ (БЕЛЫЕ РАМКИ)
+   ═══════════════════════════════════════════════════════════ */
+
+.reviews {
+  overflow: hidden; /* чтобы соседние картинки не вылезали за пределы секции */
+}
+
+.gallery-carousel {
+  width: 100%;
+  padding: 40px 0;
+  position: relative;
+}
+
+.gallery-carousel__track {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Расстояние между рамками */
+  transition: transform 0.4s ease-in-out; /* Плавный сдвиг */
+  will-change: transform;
+  padding: 0 50vw; /* Отступы по краям, чтобы первая/последняя тоже центрировались */
+}
+
+/* Стили самой рамки — она подстраивается под фото */
+.gallery-carousel__item {
+  flex: 0 0 auto;
+  height: 400px; /* Фиксированная ВЫСОТА карусели (чтобы не прыгала) */
+  background: #fff;
+  padding: 15px; /* Толщина белой рамки */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+  display: flex; /* Чтобы картинка внутри чувствовала себя уверенно */
+  box-sizing: border-box;
+}
+
+/* Активная картинка (та, что в центре) */
+.gallery-carousel__item:hover {
+  opacity: 1;
+}
+
+/* Само изображение — вписывается в высоту, а ширина подстраивается */
+.gallery-carousel__item img {
+  height: 100%;
+  width: auto;          /* Ширина автоматически подстраивается под фото */
+  object-fit: contain;  /* Картинка вписывается целиком, без обрезки */
+  display: block;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .gallery-carousel__item {
+    height: 250px;
+    padding: 10px;
+  }
+  .gallery-carousel__track {
+    gap: 20px;
+  }
+}
