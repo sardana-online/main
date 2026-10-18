@@ -241,6 +241,10 @@ onMounted(() => {
       const item = items[index]
       if (!item) return
       
+      items.forEach((el, i) => {
+        el.classList.toggle('is-active', i === index)
+      })
+      
       const track = galleryTrack
       const trackWidth = track.clientWidth
       const itemWidth = item.clientWidth
