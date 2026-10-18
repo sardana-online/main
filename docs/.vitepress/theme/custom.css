@@ -573,15 +573,19 @@ html, body {
 /* Стили самой рамки — она подстраивается под фото */
 .gallery-carousel__item {
   flex: 0 0 auto;
-  height: 400px; /* Фиксированная ВЫСОТА карусели (чтобы не прыгала) */
-  background: #fff;
-  padding: 15px; /* Толщина белой рамки */
+  height: 400px;               /* Высота рамки */
+  background: #fff;            /* Белая плашка */
+  padding: 15px;               /* Толщина рамки */
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.6;
-  display: flex; /* Чтобы картинка внутри чувствовала себя уверенно */
+  display: flex;
   box-sizing: border-box;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;                /* По умолчанию все рамки полупрозрачные */
+}
+
+.gallery-carousel__item.is-active {
+  opacity: 1;
 }
 
 /* Активная картинка (та, что в центре) */
