@@ -169,7 +169,29 @@ title: Детская Онлайн-школа Бисероплетения
   <a href="#" class="cta__button">получить урок бесплатно</a>
 </section>
 
-<!-- ═══════════════ ВЛЕВО-ВПРАВО ═══════════════ -->
+<section class="reviews">
+  <h2>Слово ученикам об учителе</h2>
+  <p class="reviews__lead">Самый лучший учитель — это тот, к которому дети бегут на уроки, чтобы получить знания.</p>
+  <p class="reviews__lead">Нажми на карусель</p>
+
+  <div class="gallery-carousel">
+    <div class="gallery-carousel__track" id="reviews-track">
+      <div class="gallery-carousel__item"><img src="/images/title.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/icon.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/teacher.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/title.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/icon.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/teacher.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/title.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/icon.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/teacher.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/title.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/icon.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ СКРИПТЫ ДЛЯ КАРУСЕЛЕЙ ═══════════════ -->
 
 <script setup>
 import { onMounted } from 'vue'
@@ -208,5 +230,40 @@ onMounted(() => {
   vp.addEventListener('scroll', updateDots, { passive: true })
   window.addEventListener('resize', updateDots)
   updateDots()  // подсветить первую при загрузке
+
+  const galleryTrack = document.getElementById('reviews-track')
+  if (galleryTrack) {
+    const items = galleryTrack.querySelectorAll('.gallery-carousel__item')
+    let currentIndex = 0 // Начинаем с первой
+
+    // Функция для центрирования элемента
+    const centerItem = (index) => {
+      const item = items[index]
+      if (!item) return
+      
+      const track = galleryTrack
+      const trackWidth = track.clientWidth
+      const itemWidth = item.clientWidth
+      
+      // Вычисляем, насколько сдвинуть трек, чтобы центр элемента совпал с центром экрана
+      const offset = (trackWidth / 2) - (itemWidth / 2) - item.offsetLeft
+      
+      track.style.transform = `translateX(${offset}px)`
+      currentIndex = index
+    }
+
+    // Центрируем первую картинку при загрузке
+    setTimeout(() => centerItem(0), 100) // Небольшая задержка, чтобы размеры прогрузились
+
+    // При клике на любую картинку (кроме центральной) — центрируем её
+    items.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        if (index !== currentIndex) centerItem(index)
+      })
+    })
+
+    // При ресайзе окна — пересчитываем центр
+    window.addEventListener('resize', () => centerItem(currentIndex))
+  }
 })
 </script>
