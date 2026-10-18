@@ -43,7 +43,7 @@ title: Детская Онлайн-школа Бисероплетения
       <div class="slider__content">
         <h2>Сообщество единомышленников</h2>
         <p>Присоединяйтесь к нашему дружному сообществу любителей бисероплетения. Общайтесь, делитесь идеями и вдохновляйтесь работами других участников.</p>
-        <a href="#" class="slider__btn">Вступить в сообщество</a>
+        <a href="#social-links" class="slider__btn">Вступить в сообщество</a>
       </div>
     </div>
     <div class="slider__slide">
@@ -188,6 +188,16 @@ title: Детская Онлайн-школа Бисероплетения
       <div class="gallery-carousel__item"><img src="/images/title.jpg" alt=""></div>
       <div class="gallery-carousel__item"><img src="/images/icon.jpg" alt=""></div>
     </div>
+  </div>
+</section>
+
+<section id="social-links" style="text-align: center; padding: 40px 20px; background: #ffffff;">
+  <h2>Присоединяйтесь к нам</h2>
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+    <a href="https://t.me/SARDANAbot?start=s=3549041" target="_blank" style="background: #0088cc; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">Telegram</a>
+    <a href="https://max.ru/id143408680451_biz" target="_blank" style="background: #8844ff; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">MAX</a>
+    <a href="https://vk.com/app5898182_-232539769#s=3406092" target="_blank" style="background: #0077ff; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">ВК</a>
+    <a href="https://mail.yandex.ru/compose?to=eu.varl4mova@yandex.ru" target="_blank" style="background: #ff4444; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">Почта</a>
   </div>
 </section>
 
