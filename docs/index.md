@@ -245,91 +245,9 @@ onMounted(() => {
     dot.addEventListener('click', () => goTo(Number(dot.dataset.slide)))
   })
 
-  // Следим за скроллом (свайп, стрелки, клик по точке — всё сюда прилетит)
+  // Следим за скроллом
   vp.addEventListener('scroll', updateDots, { passive: true })
   window.addEventListener('resize', updateDots)
-  updateDots()  // подсветить первую при загрузке
-
-  const galleryTrack = document.getElementById('reviews-track')
-  if (galleryTrack) {
-    const items = galleryTrack.querySelectorAll('.gallery-carousel__item')
-    let currentIndex = 0 // Начинаем с первой
-
-    // Функция для центрирования элемента
-    const centerItem = (index) => {
-      const item = items[index]
-      if (!item) return
-      
-      items.forEach((el, i) => {
-        el.classList.toggle('is-active', i === index)
-      })
-      
-      const track = galleryTrack
-      const trackWidth = track.clientWidth
-      const itemWidth = item.clientWidth
-      
-      // Вычисляем, насколько сдвинуть трек, чтобы центр элемента совпал с центром экрана
-      const offset = (trackWidth / 2) - (itemWidth / 2) - item.offsetLeft
-      
-      track.style.transform = `translateX(${offset}px)`
-      currentIndex = index
-    }
-
-    // Центрируем первую картинку при загрузке
-    setTimeout(() => centerItem(0), 100) // Небольшая задержка, чтобы размеры прогрузились
-
-    // При клике на любую картинку (кроме центральной) — центрируем её
-    items.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        if (index !== currentIndex) centerItem(index)
-      })
-    })
-
-    // При ресайзе окна — пересчитываем центр
-    window.addEventListener('resize', () => centerItem(currentIndex))
-    
-    // --- СВАЙПЫ (ЖЕЛЕЗОБЕТОННАЯ ВЕРСИЯ) ---
-    let touchStartX = 0
-    let touchStartY = 0
-    let isSwiping = false
-
-    galleryTrack.addEventListener('touchstart', (e) => {
-      touchStartX = e.touches[0].clientX
-      touchStartY = e.touches[0].clientY
-      isSwiping = false
-    }, { passive: true })
-
-    galleryTrack.addEventListener('touchmove', (e) => {
-      if (!touchStartX || !touchStartY) return
-      
-      const deltaX = Math.abs(e.touches[0].clientX - touchStartX)
-      const deltaY = Math.abs(e.touches[0].clientY - touchStartY)
-      
-      // Если палец двигается больше по горизонтали (влево-вправо), блокируем скролл страницы
-      if (deltaX > deltaY && deltaX > 5) {
-        if (e.cancelable) e.preventDefault()
-        isSwiping = true
-      }
-    }, { passive: false })
-
-    galleryTrack.addEventListener('touchend', (e) => {
-      if (!isSwiping) return
-      
-      const touchEndX = e.changedTouches[0].clientX
-      const swipeDistance = touchStartX - touchEndX
-      
-      if (swipeDistance > 30) {
-        // Свайп влево -> следующая
-        if (currentIndex < items.length - 1) centerItem(currentIndex + 1)
-      } else if (swipeDistance < -30) {
-        // Свайп вправо -> предыдущая
-        if (currentIndex > 0) centerItem(currentIndex - 1)
-      }
-      
-      touchStartX = 0
-      touchStartY = 0
-      isSwiping = false
-    })
-  }
+  updateDots()
 })
 </script>
