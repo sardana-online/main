@@ -279,41 +279,46 @@ onMounted(() => {
     // При ресайзе окна — пересчитываем центр
     window.addEventListener('resize', () => centerItem(currentIndex))
     
-    // --- СВАЙПЫ ДЛЯ МОБИЛОК ---
+    // --- СВАЙПЫ (ЖЕЛЕЗОБЕТОННАЯ ВЕРСИЯ) ---
     let touchStartX = 0
     let touchStartY = 0
     let isSwiping = false
 
     galleryTrack.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX
-      touchStartY = e.changedTouches[0].screenY
+      touchStartX = e.touches[0].clientX
+      touchStartY = e.touches[0].clientY
       isSwiping = false
     }, { passive: true })
 
     galleryTrack.addEventListener('touchmove', (e) => {
-      const deltaX = Math.abs(e.changedTouches[0].screenX - touchStartX)
-      const deltaY = Math.abs(e.changedTouches[0].screenY - touchStartY)
+      if (!touchStartX || !touchStartY) return
       
-      // Если движение больше по горизонтали, чем по вертикали — блокируем скролл страницы
-      if (deltaX > deltaY && deltaX > 10) {
+      const deltaX = Math.abs(e.touches[0].clientX - touchStartX)
+      const deltaY = Math.abs(e.touches[0].clientY - touchStartY)
+      
+      // Если палец двигается больше по горизонтали (влево-вправо), блокируем скролл страницы
+      if (deltaX > deltaY && deltaX > 5) {
         if (e.cancelable) e.preventDefault()
         isSwiping = true
       }
-    }, { passive: false }) // Важно: passive: false, чтобы preventDefault работал!
+    }, { passive: false })
 
     galleryTrack.addEventListener('touchend', (e) => {
-      if (!isSwiping) return // Если это был просто клик, а не свайп — ничего не делаем
+      if (!isSwiping) return
       
-      const touchEndX = e.changedTouches[0].screenX
+      const touchEndX = e.changedTouches[0].clientX
       const swipeDistance = touchStartX - touchEndX
       
-      if (swipeDistance > 40) {
+      if (swipeDistance > 30) {
         // Свайп влево -> следующая
         if (currentIndex < items.length - 1) centerItem(currentIndex + 1)
-      } else if (swipeDistance < -40) {
+      } else if (swipeDistance < -30) {
         // Свайп вправо -> предыдущая
         if (currentIndex > 0) centerItem(currentIndex - 1)
       }
+      
+      touchStartX = 0
+      touchStartY = 0
       isSwiping = false
     })
   }
