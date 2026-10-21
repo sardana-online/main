@@ -23,7 +23,7 @@ title: Детская Онлайн-школа Бисероплетения
 <section class="slider">
   <div class="slider__viewport">
     <div class="slider__slide">
-      <img class="slider__slide-bg" src="/images/title.jpg" alt="">
+      <img class="slider__slide-bg" src="/images/DETI.jpg" alt="">
       <div class="slider__content">
         <h2>Создавайте красоту и развивайте потенциал!</h2>
         <p>Добро пожаловать в мир, где бисер превращается в произведения искусства! Наши онлайн‑уроки помогут вам или вашему ребёнку не просто освоить бисероплетение — а открыть в себе творческий ресурс и укрепить ментальное здоровье.</p>
@@ -31,7 +31,7 @@ title: Детская Онлайн-школа Бисероплетения
       </div>
     </div>
     <div class="slider__slide">
-      <img class="slider__slide-bg" src="/images/teacher.jpg" alt="">
+      <img class="slider__slide-bg" src="/images/ZEKA.jpg" alt="">
       <div class="slider__content">
         <h2>Мастер-классы от профессионалов</h2>
         <p>Наши опытные преподаватели поделятся секретами мастерства и помогут вам развить навыки бисероплетения любого уровня сложности.</p>
@@ -39,7 +39,7 @@ title: Детская Онлайн-школа Бисероплетения
       </div>
     </div>
     <div class="slider__slide">
-      <img class="slider__slide-bg" src="/images/title.jpg" alt="">
+      <img class="slider__slide-bg" src="/images/DRAGON.jpg" alt="">
       <div class="slider__content">
         <h2>Сообщество единомышленников</h2>
         <p>Присоединяйтесь к нашему дружному сообществу любителей бисероплетения. Общайтесь, делитесь идеями и вдохновляйтесь работами других участников.</p>
@@ -47,11 +47,11 @@ title: Детская Онлайн-школа Бисероплетения
       </div>
     </div>
     <div class="slider__slide">
-      <img class="slider__slide-bg" src="/images/teacher.jpg" alt="">
+      <img class="slider__slide-bg" src="/images/SNOW.jpg" alt="">
       <div class="slider__content">
-        <h2>Материалы и инструменты</h2>
-        <p>Наши педагоги научат Вас выбрать качественные и недорогие материалы и инструменты для бисероплетения.</p>
-        <a href="#" class="slider__btn">Выбрать материалы</a>
+        <h2>Бесплатный урок</h2>
+        <p>С этого урока началась онлайн-школа. Глянем?</p>
+        <a href="#" class="slider__btn">Получить урок бесплатно</a>
       </div>
     </div>
   </div>
@@ -74,17 +74,17 @@ title: Детская Онлайн-школа Бисероплетения
   <p class="beads__lead">Наши мастер-классы — это:</p>
   <div class="beads__grid">
     <div class="bead">
-      <img src="/images/red.jpg" alt="">
+      <img src="/images/BALL9.png" alt="">
       <h3>Анимированные схемы</h3>
       <p>Нить «оживает» на экране, всё предельно наглядно.</p>
     </div>
     <div class="bead">
-      <img src="/images/orange.jpg" alt="">
+      <img src="/images/BALL1.png" alt="">
       <h3>Постепенное усложнение</h3>
       <p>От простых изделий к сложным композициям.</p>
     </div>
     <div class="bead">
-      <img src="/images/green.jpg" alt="">
+      <img src="/images/BALL2.png" alt="">
       <h3>Готовые результаты</h3>
       <p>Каждое занятие завершается реальным изделием, которое можно носить или дарить.</p>
     </div>
@@ -97,7 +97,7 @@ title: Детская Онлайн-школа Бисероплетения
   <h2 id="hello">Приятно познакомиться</h2>
   <div class="about__grid">
     <div class="about__photo">
-      <img src="/images/teacher.jpg" alt="Евгения Александровна Варламова">
+      <img src="/images/WATER.jpg" alt="Евгения Александровна Варламова">
     </div>
     <div class="about__text">
       <h3>Евгения Александровна Варламова</h3>
@@ -119,22 +119,22 @@ title: Детская Онлайн-школа Бисероплетения
   <p class="beads__lead">Это мощная практика развития, которая:</p>
   <div class="beads__grid">
     <div class="bead">
-      <img src="/images/red.jpg" alt="">
+      <img src="/images/BALL4.png" alt="">
       <h3>Тренирует мелкую моторику</h3>
       <p>Напрямую влияет на развитие речевых центров и координацию.</p>
     </div>
     <div class="bead">
-      <img src="/images/orange.jpg" alt="">
+      <img src="/images/BALL6.png" alt="">
       <h3>Развивает концентрацию</h3>
       <p>Повышает самооценку — каждый завершённый проект даёт ощущение «Я смог!».</p>
     </div>
     <div class="bead">
-      <img src="/images/green.jpg" alt="">
+      <img src="/images/BALL3.png" alt="">
       <h3>Укрепляет связь поколений</h3>
       <p>Совместное творчество сближает родителей и детей.</p>
     </div>
     <div class="bead">
-      <img src="/images/blue.jpg" alt="">
+      <img src="/images/BALL7.png" alt="">
       <h3>Результат</h3>
       <p>Улучшенная успеваемость в школе, устойчивость к стрессу, развитая креативность.</p>
     </div>
@@ -166,7 +166,7 @@ title: Детская Онлайн-школа Бисероплетения
   </ol>
   <p>Присоединяйтесь к сообществу творцов — создавайте красоту и развивайтесь вместе с нами!</p>
   <p class="cta__promo">Сохраните Ваш промокод:</p>
-  <a href="#" class="cta__button">получить урок бесплатно</a>
+  <a href="#" class="cta__button">Получить урок бесплатно</a>
 </section>
 
 <section class="reviews">
@@ -176,17 +176,17 @@ title: Детская Онлайн-школа Бисероплетения
 
   <div class="gallery-carousel">
     <div class="gallery-carousel__track" id="reviews-track">
-      <div class="gallery-carousel__item"><img src="/images/title.jpg" alt=""></div>
-      <div class="gallery-carousel__item"><img src="/images/icon.jpg" alt=""></div>
-      <div class="gallery-carousel__item"><img src="/images/teacher.jpg" alt=""></div>
-      <div class="gallery-carousel__item"><img src="/images/title.jpg" alt=""></div>
-      <div class="gallery-carousel__item"><img src="/images/icon.jpg" alt=""></div>
-      <div class="gallery-carousel__item"><img src="/images/teacher.jpg" alt=""></div>
-      <div class="gallery-carousel__item"><img src="/images/title.jpg" alt=""></div>
-      <div class="gallery-carousel__item"><img src="/images/icon.jpg" alt=""></div>
-      <div class="gallery-carousel__item"><img src="/images/teacher.jpg" alt=""></div>
-      <div class="gallery-carousel__item"><img src="/images/title.jpg" alt=""></div>
-      <div class="gallery-carousel__item"><img src="/images/icon.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ0.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ1.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ2.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ3.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ4.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ5.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ6.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ7.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ8.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ9.jpg" alt=""></div>
+      <div class="gallery-carousel__item"><img src="/images/OTZ.jpg" alt=""></div>
     </div>
   </div>
 </section>
