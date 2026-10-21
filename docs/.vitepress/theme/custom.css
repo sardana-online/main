@@ -617,12 +617,36 @@ html, body {
   }
 }
 
-/* Стили для видео */
-.split__media iframe {
+/* Видео */
+.split__media { 
+  width: 100%;
+  max-width: 700px; 
+  margin-right: auto; 
+}
+
+/* Контейнер для самого видео (чтобы не прилипало) */
+.video-wrapper {
   width: 100%;
   aspect-ratio: 16 / 9; /* Стандартные пропорции видео */
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  display: block;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
   border: none;
+  display: block;
+}
+
+/* Подпись под видео */
+.video-caption {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 8px !important;      /* Жесткий размер, чтобы VitePress не сжимал */
+  color: #555555;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-style: italic;
 }
