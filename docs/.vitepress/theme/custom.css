@@ -613,10 +613,10 @@ html, body {
     gap: 20px;
   }
   .gallery-carousel__item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;          /* Картинка вписывается, сохраняя пропорции */
-    max-width: none !important;   /* Убираем старое ограничение с картинки */
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    max-width: 100% !important;
   }
 }
 
