@@ -559,16 +559,17 @@ html, body {
   width: 100%;
   padding: 40px 0;
   position: relative;
-  touch-action: pan-y; 
+  overflow: hidden;
+  touch-action: pan-y !important; /* Разрешаем только вертикальный скролл */
 }
 
 .gallery-carousel__track {
   display: flex;
   align-items: center;
-  gap: 40px; /* Расстояние между рамками */
-  transition: transform 0.4s ease-in-out; /* Плавный сдвиг */
+  gap: 40px;
+  transition: transform 0.4s ease-in-out;
   will-change: transform;
-  padding: 0 50vw; /* Отступы по краям, чтобы первая/последняя тоже центрировались */
+  padding: 0 50vw;
 }
 
 /* Стили самой рамки — она подстраивается под фото */
