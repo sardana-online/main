@@ -574,9 +574,6 @@ html, body {
 .gallery-carousel__item {
   flex: 0 0 auto;
   height: 400px;               /* Высота рамки */
-  background: #fff;            /* Белая плашка */
-  padding: 15px;               /* Толщина рамки */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   cursor: pointer;
   display: flex;
   box-sizing: border-box;
@@ -605,9 +602,14 @@ html, body {
 @media (max-width: 768px) {
   .gallery-carousel__item {
     height: 250px;
-    padding: 10px;
   }
   .gallery-carousel__track {
     gap: 20px;
+  }
+  /* Заставляем саму картинку вписываться в рамку */
+  .gallery-carousel__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
