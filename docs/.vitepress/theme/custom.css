@@ -445,42 +445,6 @@ h1, h2, h3, h4 {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   ОТЗЫВЫ — карусель #2
-   ═══════════════════════════════════════════════════════════ */
-
-.reviews {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  padding: var(--sec-pad-y) var(--sec-pad-x);
-  background: var(--sardana-green);
-  text-align: center;
-}
-.reviews h2 { font-size: 36px; margin: 0 0 16px; }
-.reviews__lead { font-size: 18px; margin: 0 0 40px; color: #2a3a1a; }
-.reviews__track {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 0 24px 16px;
-  -webkit-overflow-scrolling: touch;
-}
-.reviews__track img {
-  flex: 0 0 auto;
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
-  scroll-snap-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-}
-.reviews__track::-webkit-scrollbar { height: 8px; }
-.reviews__track::-webkit-scrollbar-thumb {
-  background: var(--sardana-black);
-  border-radius: 4px;
-}
-
-/* ═══════════════════════════════════════════════════════════
    АДАПТИВ
    ═══════════════════════════════════════════════════════════ */
 
@@ -548,75 +512,57 @@ html, body {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   КАРУСЕЛЬ ОТЗЫВОВ (БЕЛЫЕ РАМКИ)
+   КАРУСЕЛЬ ОТЗЫВОВ (НАТИВНЫЙ СКРОЛЛ)
    ═══════════════════════════════════════════════════════════ */
-
-.reviews {
-  overflow: hidden; /* чтобы соседние картинки не вылезали за пределы секции */
-}
 
 .gallery-carousel {
   width: 100%;
   padding: 40px 0;
-  position: relative;
-  overflow: hidden;
-  touch-action: pan-y !important; /* Разрешаем только вертикальный скролл */
+  overflow: hidden; 
 }
 
 .gallery-carousel__track {
   display: flex;
   align-items: center;
-  gap: 40px;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
-  will-change: transform;
-  padding: 0 50vw;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  
+  /* Отступы, чтобы картинки вставали ровно по центру */
+  padding: 0 calc(50vw - 42.5vw); 
+}
+.gallery-carousel__track::-webkit-scrollbar { 
+  display: none; 
 }
 
-/* Стили самой рамки — она подстраивается под фото */
 .gallery-carousel__item {
-  flex: 0 0 auto;
-  height: 400px;               /* Высота рамки */
-  cursor: pointer;
+  flex: 0 0 85vw; 
+  height: 250px;
+  scroll-snap-align: center; /* Автоматическое прилипание к центру */
   display: flex;
-  box-sizing: border-box;
-  transition: opacity 0.3s ease;
-  opacity: 0.6;                /* По умолчанию все рамки полупрозрачные */
+  justify-content: center;
+  align-items: center;
 }
 
-.gallery-carousel__item.is-active {
-  opacity: 1;
-}
-
-/* Активная картинка (та, что в центре) */
-.gallery-carousel__item:hover {
-  opacity: 1;
-}
-
-/* Само изображение — вписывается в высоту, а ширина подстраивается */
 .gallery-carousel__item img {
+  width: 100%;
   height: 100%;
-  width: auto;          /* Ширина автоматически подстраивается под фото */
-  object-fit: contain;  /* Картинка вписывается целиком, без обрезки */
+  object-fit: contain;
   display: block;
+  border-radius: 8px;
 }
 
-/* Мобильная версия */
-@media (max-width: 768px) {
+/* На ПК */
+@media (min-width: 769px) {
   .gallery-carousel__item {
-    height: 250px;
-    width: 85vw !important;       /* Рамка занимает ровно 85% ширины экрана */
-    max-width: 85vw !important;
-    flex: 0 0 85vw !important;    /* Запрещаем флекс-контейнеру её сжимать или растягивать */
-    justify-content: center;      /* Центрируем картинку внутри рамки */
+    flex: 0 0 400px; 
+    height: 400px;
   }
   .gallery-carousel__track {
-    gap: 20px;
-  }
-  .gallery-carousel__item img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain;
-    max-width: 100% !important;
+    padding: 0 calc(50vw - 200px);
   }
 }
 
