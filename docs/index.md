@@ -97,7 +97,7 @@ title: Детская Онлайн-школа Бисероплетения
   <h2 id="hello">Приятно познакомиться</h2>
   <div class="about__grid">
     <div class="about__photo">
-      <img src="/images/WATER.jpg" alt="Евгения Александровна Варламова">
+      <img src="/images/teacher.jpg" alt="Евгения Александровна Варламова">
     </div>
     <div class="about__text">
       <h3>Евгения Александровна Варламова</h3>
@@ -150,7 +150,13 @@ title: Детская Онлайн-школа Бисероплетения
     <p>Сделайте их вместе — со временем эти изделия станут тёплыми воспоминаниями и сблизят Вас.</p>
   </div>
   <div class="split__media">
-    <img src="/images/title.jpg" alt="Видеоэкскурсия">
+    <iframe 
+      src="https://vkvideo.ru/video_ext.php?oid=-232539769&id=456239031"
+      width="100%" 
+      height="100%" 
+      frameborder="0" 
+      allowfullscreen>
+    </iframe>
   </div>
 </section>
 
