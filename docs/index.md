@@ -281,14 +281,30 @@ onMounted(() => {
     
     // --- СВАЙПЫ ДЛЯ МОБИЛОК ---
     let touchStartX = 0
-    let touchEndX = 0
+    let touchStartY = 0
+    let isSwiping = false
 
     galleryTrack.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX
+      touchStartY = e.changedTouches[0].screenY
+      isSwiping = false
     }, { passive: true })
 
+    galleryTrack.addEventListener('touchmove', (e) => {
+      const deltaX = Math.abs(e.changedTouches[0].screenX - touchStartX)
+      const deltaY = Math.abs(e.changedTouches[0].screenY - touchStartY)
+      
+      // Если движение больше по горизонтали, чем по вертикали — блокируем скролл страницы
+      if (deltaX > deltaY && deltaX > 10) {
+        if (e.cancelable) e.preventDefault()
+        isSwiping = true
+      }
+    }, { passive: false }) // Важно: passive: false, чтобы preventDefault работал!
+
     galleryTrack.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX
+      if (!isSwiping) return // Если это был просто клик, а не свайп — ничего не делаем
+      
+      const touchEndX = e.changedTouches[0].screenX
       const swipeDistance = touchStartX - touchEndX
       
       if (swipeDistance > 40) {
@@ -298,6 +314,7 @@ onMounted(() => {
         // Свайп вправо -> предыдущая
         if (currentIndex > 0) centerItem(currentIndex - 1)
       }
+      isSwiping = false
     })
   }
 })
