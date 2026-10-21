@@ -278,6 +278,27 @@ onMounted(() => {
 
     // При ресайзе окна — пересчитываем центр
     window.addEventListener('resize', () => centerItem(currentIndex))
+    
+    // --- СВАЙПЫ ДЛЯ МОБИЛОК ---
+    let touchStartX = 0
+    let touchEndX = 0
+
+    galleryTrack.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX
+    }, { passive: true })
+
+    galleryTrack.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX
+      const swipeDistance = touchStartX - touchEndX
+      
+      if (swipeDistance > 40) {
+        // Свайп влево -> следующая
+        if (currentIndex < items.length - 1) centerItem(currentIndex + 1)
+      } else if (swipeDistance < -40) {
+        // Свайп вправо -> предыдущая
+        if (currentIndex > 0) centerItem(currentIndex - 1)
+      }
+    })
   }
 })
 </script>
