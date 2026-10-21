@@ -620,7 +620,7 @@ html, body {
 /* Видео */
 .split__media { 
   width: 100%;
-  max-width: 700px; 
+  max-width: 600px; 
   margin-right: auto; 
 }
 
@@ -643,7 +643,7 @@ html, body {
 /* Подпись под видео */
 .video-caption {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 8px !important;      /* Жесткий размер, чтобы VitePress не сжимал */
+  font-size: 10px !important;      /* Жесткий размер, чтобы VitePress не сжимал */
   color: #555555;
   text-align: center;
   margin-top: 12px;
