@@ -150,13 +150,16 @@ title: Детская Онлайн-школа Бисероплетения
     <p>Сделайте их вместе — со временем эти изделия станут тёплыми воспоминаниями и сблизят Вас.</p>
   </div>
   <div class="split__media">
-    <iframe 
-      src="https://vkvideo.ru/video_ext.php?oid=-232539769&id=456239031"
-      width="100%" 
-      height="100%" 
-      frameborder="0" 
-      allowfullscreen>
-    </iframe>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://vkvideo.ru/video_ext.php?oid=-232539769&id=456239031" 
+        width="100%" 
+        height="100%" 
+        frameborder="0" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-caption">Авторские права защищены, копирование запрещено.</p>
   </div>
 </section>
 
