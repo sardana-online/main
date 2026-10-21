@@ -567,7 +567,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 40px;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
   will-change: transform;
   padding: 0 50vw;
 }
@@ -615,4 +615,14 @@ html, body {
     object-fit: contain;
     max-width: 85vw;
   }
+}
+
+/* Стили для видео */
+.split__media iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Стандартные пропорции видео */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  display: block;
+  border: none;
 }
