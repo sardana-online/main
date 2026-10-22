@@ -504,11 +504,11 @@ h1, h2, h3, h4 {
 
 @media (min-width: 769px) {
   .gallery-carousel__item {
-    flex: 0 0 400px; 
-    height: 400px;
+    flex: 0 0 600px; 
+    height: 600px;
   }
   .gallery-carousel__track {
-    padding: 0 calc(50vw - 200px);
+    padding: 0 calc(50vw - 300px);
   }
 }
 
@@ -542,3 +542,8 @@ html, body { overflow-x: hidden; }
 
 .VPSocialLink { color: #ffffff !important; }
 .VPSocialLink:hover { color: var(--sardana-green) !important; }
+@media (max-width: 768px) {
+  .gallery-carousel .slider__arrow {
+    display: none !important;
+  }
+}
