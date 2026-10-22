@@ -185,7 +185,11 @@ title: Детская Онлайн-школа Бисероплетения
   <p class="reviews__lead">Самый лучший учитель — это тот, к которому дети бегут на уроки, чтобы получить знания.</p>
   <p class="reviews__lead">Нажми на карусель</p>
 
-  <div class="gallery-carousel">
+  <div class="gallery-carousel" style="position: relative;">
+    <!-- ВОТ СЮДА ВСТАВЛЯЕМ СТРЕЛКИ -->
+    <button type="button" class="slider__arrow slider__arrow--prev" onclick="document.getElementById('reviews-track').scrollBy({ left: -420, behavior: 'smooth' })" aria-label="Назад">‹</button>
+    <button type="button" class="slider__arrow slider__arrow--next" onclick="document.getElementById('reviews-track').scrollBy({ left: 420, behavior: 'smooth' })" aria-label="Вперед">›</button>
+
     <div class="gallery-carousel__track" id="reviews-track">
       <div class="gallery-carousel__item"><img src="/images/OTZ0.jpg" alt=""></div>
       <div class="gallery-carousel__item"><img src="/images/OTZ1.jpg" alt=""></div>
