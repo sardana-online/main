@@ -18,7 +18,7 @@ title: Детская Онлайн-школа Бисероплетения
   </div>
 </div>
 
-<!-- ═══════════════ КАРУСЕЛЬ #1 (заглушка) ═══════════════ -->
+<!-- ═══════════════ КАРУСЕЛЬ #1 (слайдер) ═══════════════ -->
 
 <section class="slider">
   <div class="slider__viewport">
@@ -67,7 +67,7 @@ title: Детская Онлайн-школа Бисероплетения
   </div>
 </section>
 
-<!-- ═══════════════ КАК УСТРОЕНО ОБУЧЕНИЕ (3 бусины) ═══════════════ -->
+<!-- ═══════════════ КАК УСТРОЕНО ОБУЧЕНИЕ ═══════════════ -->
 
 <section class="beads beads--3">
   <h2>Как устроено обучение</h2>
@@ -91,7 +91,7 @@ title: Детская Онлайн-школа Бисероплетения
   </div>
 </section>
 
-<!-- ═══════════════ ПРИЯТНО ПОЗНАКОМИТЬСЯ (фото + текст) ═══════════════ -->
+<!-- ═══════════════ ПРИЯТНО ПОЗНАКОМИТЬСЯ ═══════════════ -->
 
 <section class="about">
   <h2 id="hello">Приятно познакомиться</h2>
@@ -112,7 +112,7 @@ title: Детская Онлайн-школа Бисероплетения
   </div>
 </section>
 
-<!-- ═══════════════ ПОЧЕМУ ЭТО БОЛЬШЕ, ЧЕМ ХОББИ (4 бусины) ═══════════════ -->
+<!-- ═══════════════ ПОЧЕМУ ЭТО БОЛЬШЕ, ЧЕМ ХОББИ ═══════════════ -->
 
 <section class="beads beads--4">
   <h2>Почему бисероплетение — больше, чем хобби?</h2>
@@ -141,7 +141,7 @@ title: Детская Онлайн-школа Бисероплетения
   </div>
 </section>
 
-<!-- ═══════════════ ПОДХОДИТ ДЕТЯМ И ВЗРОСЛЫМ (текст + видео) ═══════════════ -->
+<!-- ═══════════════ ПОДХОДИТ ДЕТЯМ И ВЗРОСЛЫМ ═══════════════ -->
 
 <section class="split">
   <div class="split__text">
@@ -163,7 +163,7 @@ title: Детская Онлайн-школа Бисероплетения
   </div>
 </section>
 
-<!-- ═══════════════ НАЧНИТЕ ПРЯМО СЕЙЧАС (белая плашка) ═══════════════ -->
+<!-- ═══════════════ НАЧНИТЕ ПРЯМО СЕЙЧАС ═══════════════ -->
 
 <section class="cta">
   <h2>Начните прямо сейчас!</h2>
@@ -177,6 +177,8 @@ title: Детская Онлайн-школа Бисероплетения
   <p class="cta__promo">Сохраните Ваш промокод:</p>
   <a href="#" class="cta__button">Получить урок бесплатно</a>
 </section>
+
+<!-- ═══════════════ ОТЗЫВЫ (НАТИВНЫЙ СКРОЛЛ) ═══════════════ -->
 
 <section class="reviews">
   <h2>Слово ученикам об учителе</h2>
@@ -200,6 +202,8 @@ title: Детская Онлайн-школа Бисероплетения
   </div>
 </section>
 
+<!-- ═══════════════ СОЦСЕТИ ═══════════════ -->
+
 <section id="social-links" style="text-align: center; padding: 40px 20px; background: #ffffff;">
   <h2>Присоединяйтесь к нам</h2>
   <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
@@ -210,7 +214,7 @@ title: Детская Онлайн-школа Бисероплетения
   </div>
 </section>
 
-<!-- ═══════════════ СКРИПТЫ ДЛЯ КАРУСЕЛЕЙ ═══════════════ -->
+<!-- ═══════════════ СКРИПТ ДЛЯ СЛАЙДЕРА ═══════════════ -->
 
 <script setup>
 import { onMounted } from 'vue'
@@ -226,13 +230,11 @@ onMounted(() => {
     vp.scrollTo({ left: vp.clientWidth * clamped, behavior: 'smooth' })
   }
 
-  // Обновляем активную точку
   const updateDots = () => {
     const idx = Math.round(vp.scrollLeft / vp.clientWidth)
     dots.forEach((d, i) => d.classList.toggle('is-active', i === idx))
   }
 
-  // Стрелки
   document.querySelector('.slider__arrow--prev')?.addEventListener('click', () => {
     goTo(Math.round(vp.scrollLeft / vp.clientWidth) - 1)
   })
@@ -240,12 +242,10 @@ onMounted(() => {
     goTo(Math.round(vp.scrollLeft / vp.clientWidth) + 1)
   })
 
-  // Точки
   dots.forEach(dot => {
     dot.addEventListener('click', () => goTo(Number(dot.dataset.slide)))
   })
 
-  // Следим за скроллом
   vp.addEventListener('scroll', updateDots, { passive: true })
   window.addEventListener('resize', updateDots)
   updateDots()
