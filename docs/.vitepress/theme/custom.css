@@ -217,7 +217,7 @@ h1, h2, h3, h4 {
   transform: translateY(-50%);
   width: 52px; height: 52px;
   border-radius: 50%;
-  background: rgba(255,255,255,.25);
+  background: rgba(0,0,0,.80);
   color: #fff;
   font-size: 32px;
   line-height: 1;
@@ -233,7 +233,7 @@ h1, h2, h3, h4 {
 }
 .slider__arrow--prev { left: 24px; }
 .slider__arrow--next { right: 24px; }
-.slider__arrow:hover { background: rgba(255,255,255,.45); }
+.slider__arrow:hover { background: rgba(0,128,0,.80); }
 
 .slider__dots {
   position: absolute;
