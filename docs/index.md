@@ -146,7 +146,7 @@ title: Детская Онлайн-школа Бисероплетения
 <section class="split">
   <div class="split__text">
     <h2>Подходит детям и взрослым!</h2>
-    <p><strong>Важно:</strong> не ругайте ребёнка, если он освоил лишь несколько мастер-классов.</p>
+    <p><strong>⚠ Важно:</strong> не ругайте ребёнка, если он освоил лишь несколько мастер-классов.</p>
     <p>Сделайте их вместе — со временем эти изделия станут тёплыми воспоминаниями и сблизят Вас.</p>
   </div>
   <div class="split__media">
@@ -183,10 +183,10 @@ title: Детская Онлайн-школа Бисероплетения
 <section class="reviews">
   <h2>Слово ученикам об учителе</h2>
   <p class="reviews__lead">Самый лучший учитель — это тот, к которому дети бегут на уроки, чтобы получить знания.</p>
-  <p class="reviews__lead">Нажми на карусель</p>
+  <p class="reviews__lead">Вращай карусель!</p>
   <div class="gallery-carousel" style="position: relative;">
-    <button type="button" class="slider__arrow slider__arrow--prev" onclick="document.getElementById('reviews-track').scrollBy(-420, 0)" aria-label="Назад">‹</button>
-    <button type="button" class="slider__arrow slider__arrow--next" onclick="document.getElementById('reviews-track').scrollBy(420, 0)" aria-label="Вперед">›</button>
+    <button type="button" class="slider__arrow slider__arrow--prev" onclick="document.getElementById('reviews-track').scrollBy(-620, 0)" aria-label="Назад">‹</button>
+    <button type="button" class="slider__arrow slider__arrow--next" onclick="document.getElementById('reviews-track').scrollBy(620, 0)" aria-label="Вперед">›</button>
     <div class="gallery-carousel__track" id="reviews-track">
       <div class="gallery-carousel__item"><img src="/images/OTZ0.jpg" alt=""></div>
       <div class="gallery-carousel__item"><img src="/images/OTZ1.jpg" alt=""></div>
