@@ -1,10 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
    SARDANA ONLINE — кастомная тема
-   Палитра: салатовая #E0FFA0, чёрный, белый, золото-акцент
-   Шрифт: Georgia (serif)
    ═══════════════════════════════════════════════════════════ */
 
-/* ── Переменные VitePress (тема перекрашивается целиком) ── */
 :root {
   --vp-c-brand-1: #6b8f3a;
   --vp-c-brand-2: #5c7d33;
@@ -25,12 +22,11 @@
   --vp-nav-bg-color: #111111;
   --vp-nav-height: 64px;
 
-  /* Отступы секций */
   --sec-pad-y: 72px;
   --sec-pad-x: 24px;
 }
 
-/* ── Меню (Nav) — чёрное ── */
+/* ── Меню (Nav) ── */
 .VPNav,
 .VPNavBar,
 .VPNavBar .container,
@@ -60,19 +56,12 @@
   background-color: #fff !important;
 }
 
-/* Скрыть дефолтный hero VitePress — у нас свой */
+/* Скрыть дефолтный hero VitePress */
 .VPHome .VPHero,
 .VPHome .VPFeatures {
   display: none !important;
 }
 
-/* Спрятать боковое меню на главной, чтобы не мешало */
-.VPDoc.has-aside .content-container,
-.VPDoc .aside {
-  /* оставлено на будущее */
-}
-
-/* Общие стили контента */
 .VPDoc .content-container {
   max-width: 1100px !important;
 }
@@ -89,7 +78,7 @@ h1, h2, h3, h4 {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   HERO-ФОТО + ЛОГОТИП-КРУГ
+   HERO-ФОТО + ЛОГОТИП
    ═══════════════════════════════════════════════════════════ */
 
 .hero-photo {
@@ -102,8 +91,8 @@ h1, h2, h3, h4 {
 .hero-photo__bg {
   display: block;
   width: 100%;
-  height: 60vh;
-  min-height: 380px;
+  height: auto;
+  aspect-ratio: 4 / 1;
   object-fit: cover;
 }
 
@@ -141,7 +130,7 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 
-/* ═══════════════ СЛАЙДЕР НА CSS SCROLL-SNAP ═══════════════ */
+/* ═══════════════ СЛАЙДЕР ═══════════════ */
 
 .slider {
   position: relative;
@@ -268,14 +257,15 @@ h1, h2, h3, h4 {
 .slider__dot.is-active { background: #fff; }
 
 @media (max-width: 768px) {
-  .slider__slide { aspect-ratio: 1 / 2; }   /* мобила: 1:2 */
+  .slider__slide { aspect-ratio: 1 / 2; }
   .slider__arrow { width: 40px; height: 40px; font-size: 24px; }
   .slider__arrow--prev { left: 8px; }
   .slider__arrow--next { right: 8px; }
+  .hero-photo__bg { aspect-ratio: 7 / 4; }
 }
 
 /* ═══════════════════════════════════════════════════════════
-   БЛОКИ С БУСИНАМИ (3 и 4 колонки) — салатовый фон
+   БУСИНЫ
    ═══════════════════════════════════════════════════════════ */
 
 .beads {
@@ -312,7 +302,6 @@ h1, h2, h3, h4 {
   margin: 0 auto 16px;
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
 }
-
 .bead h3 {
   font-size: 22px;
   margin: 0 0 12px;
@@ -326,7 +315,7 @@ h1, h2, h3, h4 {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   ПРИЯТНО ПОЗНАКОМИТЬСЯ (фото + текст)
+   ПРИЯТНО ПОЗНАКОМИТЬСЯ
    ═══════════════════════════════════════════════════════════ */
 
 .about {
@@ -371,7 +360,7 @@ h1, h2, h3, h4 {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   ПОДХОДИТ ДЕТЯМ (текст + видео)
+   ПОДХОДИТ ДЕТЯМ (ВИДЕО)
    ═══════════════════════════════════════════════════════════ */
 
 .split {
@@ -387,15 +376,33 @@ h1, h2, h3, h4 {
 .split__text { max-width: 520px; margin-left: auto; }
 .split__text h2 { font-size: 36px; margin: 0 0 20px; }
 .split__text p { font-size: 17px; line-height: 1.6; }
-.split__media { max-width: 520px; margin-right: auto; }
-.split__media img {
+.split__media { width: 100%; max-width: 600px; margin-right: auto; }
+
+.video-wrapper {
   width: 100%;
+  aspect-ratio: 16 / 9;
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.video-caption {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 10px !important;
+  color: #000000;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-style: italic;
 }
 
 /* ═══════════════════════════════════════════════════════════
-   CTA — белая плашка
+   CTA
    ═══════════════════════════════════════════════════════════ */
 
 .cta {
@@ -419,8 +426,6 @@ h1, h2, h3, h4 {
   font-weight: 700;
   margin-top: 32px !important;
 }
-.slider__btn-wrap,
-.cta__button-wrap { margin-top: 16px; }
 
 .slider__btn,
 .cta__button {
@@ -445,6 +450,69 @@ h1, h2, h3, h4 {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   ОТЗЫВЫ (НАТИВНЫЙ СКРОЛЛ)
+   ═══════════════════════════════════════════════════════════ */
+
+.reviews {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: var(--sec-pad-y) var(--sec-pad-x);
+  background: var(--sardana-green);
+  text-align: center;
+  overflow: hidden;
+}
+.reviews h2 { font-size: 36px; margin: 0 0 16px; }
+.reviews__lead { font-size: 18px; margin: 0 0 40px; color: #2a3a1a; }
+
+.gallery-carousel {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.gallery-carousel__track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  
+  /* Магия центрирования первой и последней картинки */
+  padding: 0 calc(50vw - 42.5vw); 
+}
+.gallery-carousel__track::-webkit-scrollbar { 
+  display: none; 
+}
+
+.gallery-carousel__item {
+  flex: 0 0 85vw; 
+  height: 250px;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-carousel__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .gallery-carousel__item {
+    flex: 0 0 400px; 
+    height: 400px;
+  }
+  .gallery-carousel__track {
+    padding: 0 calc(50vw - 200px);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
    АДАПТИВ
    ═══════════════════════════════════════════════════════════ */
 
@@ -463,139 +531,14 @@ h1, h2, h3, h4 {
   .beads--4 .beads__grid { grid-template-columns: 1fr; }
   .beads h2, .about h2 { font-size: 30px; }
   .hero-logo__title { font-size: 26px; }
-  .carousel__item { width: 260px; height: 200px; }
 }
 
-/* ЗАПРЕТИТЬ ПОЛОСКИ */
+/* ── ФИНАЛЬНАЯ ЗАЧИСТКА ── */
 h2 { border-top: none !important; }
 h2 + h2 { margin-top: 0 !important; }
-hr { 
-  border: none !important;
-  display: none !important;
-}
+hr { border: none !important; display: none !important; }
 .vp-doc hr { display: none !important; }
+html, body { overflow-x: hidden; }
 
-/* ЗАПРЕТИТЬ ПОДЧЁРКИВАНИЕ */
-.slider__btn,
-.cta__button {
-  text-decoration: none !important;
-}
-
-/* ЗАПРЕТИТЬ ПОЛЗУНОК */
-html, body {
-  overflow-x: hidden;
-}
-
-/* Сброс жесткой высоты для десктопа */
-.hero-photo__bg {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 1;
-  object-fit: cover;
-}
-
-/* Для мобилы делаем блок, чтобы текст не обрезался по бокам */
-@media (max-width: 768px) {
-  .hero-photo__bg {
-    aspect-ratio: 7 / 4;
-    height: auto;
-    min-height: unset; /* Убираем старое ограничение в 380px! */
-  }
-}
-
-/* Белые иконки соцсетей в шапке */
-.VPSocialLink {
-  color: #ffffff !important;
-}
-.VPSocialLink:hover {
-  color: var(--sardana-green) !important; /* при наведении — салатовый (или любой другой) */
-}
-
-/* ═══════════════════════════════════════════════════════════
-   КАРУСЕЛЬ ОТЗЫВОВ (НАТИВНЫЙ СКРОЛЛ)
-   ═══════════════════════════════════════════════════════════ */
-
-.gallery-carousel {
-  width: 100%;
-  padding: 40px 0;
-  overflow: hidden; 
-}
-
-.gallery-carousel__track {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  
-  /* Отступы, чтобы картинки вставали ровно по центру */
-  padding: 0 calc(50vw - 42.5vw); 
-}
-.gallery-carousel__track::-webkit-scrollbar { 
-  display: none; 
-}
-
-.gallery-carousel__item {
-  flex: 0 0 85vw; 
-  height: 250px;
-  scroll-snap-align: center; /* Автоматическое прилипание к центру */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.gallery-carousel__item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  border-radius: 8px;
-}
-
-/* На ПК */
-@media (min-width: 769px) {
-  .gallery-carousel__item {
-    flex: 0 0 400px; 
-    height: 400px;
-  }
-  .gallery-carousel__track {
-    padding: 0 calc(50vw - 200px);
-  }
-}
-
-/* Видео */
-.split__media { 
-  width: 100%;
-  max-width: 600px; 
-  margin-right: auto; 
-}
-
-/* Контейнер для самого видео (чтобы не прилипало) */
-.video-wrapper {
-  width: 100%;
-  aspect-ratio: 16 / 9; /* Стандартные пропорции видео */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
-
-/* Подпись под видео */
-.video-caption {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 10px !important;      /* Жесткий размер, чтобы VitePress не сжимал */
-  color: #000000;
-  text-align: center;
-  margin-top: 12px;
-  margin-bottom: 0;
-  font-style: italic;
-}
+.VPSocialLink { color: #ffffff !important; }
+.VPSocialLink:hover { color: var(--sardana-green) !important; }
