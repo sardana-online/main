@@ -513,104 +513,6 @@ h1, h2, h3, h4 {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   СТРАНИЦА МОДУЛЕЙ (lessons)
-   ═══════════════════════════════════════════════════════════ */
-
-/* Убираем ограничение ширины контейнера на странице модулей */
-.VPDoc .container { max-width: 100% !important; padding: 0 !important; }
-.VPDoc .content { padding: 0 !important; }
-.VPDoc .content-container { max-width: 100% !important; }
-.VPDoc .aside { display: none !important; }
-
-/* ── САМ МОДУЛЬ ── */
-.module {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  padding: 60px 20px;
-  background: #e0ffa0; /* Салатовый фон */
-  border-bottom: 4px solid #fff;
-}
-
-/* 1. Обложка с эффектом увеличения */
-.module__hero {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-.module__hero-link { display: block; text-decoration: none; color: #fff; }
-.module__bg {
-  display: block;
-  width: 100%;
-  aspect-ratio: 2.5/1;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-.module__hero:hover .module__bg { transform: scale(1.05); }
-
-.module__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-.module__title { font-size: 48px; margin: 0 0 16px; color: #fff !important; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-.module__overlay p { font-size: 20px; margin: 4px 0; color: #fff; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
-
-/* 2. Переопределение карусели для ПК (Сетка 3х2) */
-@media (min-width: 769px) {
-  /* Только внутри модуля карусель становится сеткой */
-  .module .gallery-carousel__track {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 0;
-    overflow: visible;
-  }
-  
-  .module .gallery-carousel__item {
-    flex: none;
-    width: 100%;
-    height: auto;
-    opacity: 1 !important; /* Убираем бледность */
-  }
-  
-  .module .gallery-carousel__item img {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1/1; /* Квадратные картинки */
-    object-fit: cover;
-    border-radius: 8px;
-  }
-}
-
-/* 3. Таблица цен */
-.module__pricing { max-width: 1000px; margin: 0 auto 40px; overflow-x: auto; }
-.module__pricing table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-.module__pricing th { background: #f5f5f5; padding: 16px; text-align: left; font-size: 18px; border-bottom: 2px solid #ddd; }
-.module__pricing td { padding: 16px; border-bottom: 1px solid #eee; font-size: 16px; }
-
-/* 4. Кнопка */
-.module__cta { text-align: center; }
-.module__button { display: inline-block; background: #ff6a4d; color: #fff !important; padding: 18px 44px; border-radius: 40px; font-weight: 700; text-decoration: none !important; box-shadow: 0 6px 20px rgba(0,0,0,0.25); transition: transform 0.2s, background 0.2s; }
-.module__button:hover { background: #ff8168; transform: translateY(-2px); }
-
-/* 5. Мобилка (уменьшаем обложку и таблицу) */
-@media (max-width: 768px) {
-  .module__bg { aspect-ratio: 4/3; }
-  .module__title { font-size: 32px; }
-  .module__overlay p { font-size: 16px; }
-  .module__pricing th, .module__pricing td { padding: 12px; font-size: 14px; }
-}
-
-/* ═══════════════════════════════════════════════════════════
    АДАПТИВ
    ═══════════════════════════════════════════════════════════ */
 
@@ -635,6 +537,169 @@ h1, h2, h3, h4 {
     padding: 0 50px; /* Отступы по 50px с каждой стороны на мобилке */
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   СТРАНИЦА МОДУЛЕЙ (ПОЛНОСТЬЮ ИСПРАВЛЕННАЯ)
+   ═══════════════════════════════════════════════════════════ */
+
+/* Убираем ограничение ширины контейнера, чтобы обложка была на весь экран */
+.VPDoc .container { max-width: 100% !important; padding: 0 !important; }
+.VPDoc .content { padding: 0 !important; }
+.VPDoc .content-container { max-width: 100% !important; }
+.VPDoc .aside { display: none !important; }
+
+/* Секция модуля */
+.module {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 60px 0; /* Убрали боковые отступы, чтобы обложка была впритык */
+  background: #e0ffa0;
+  border-bottom: 4px solid #fff;
+}
+
+/* 1. ОБЛОЖКА НА ВСЮ ШИРИНУ ЭКРАНА */
+.module__hero {
+  position: relative;
+  width: 100%;
+  /* Никаких max-width и border-radius, чтобы была во весь экран */
+  overflow: hidden;
+}
+.module__hero-link { display: block; text-decoration: none; color: #fff; }
+.module__bg {
+  display: block;
+  width: 100%;
+  height: 60vh; /* Высота обложки, можно подогнать */
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.module__hero:hover .module__bg { transform: scale(1.05); }
+
+.module__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.module__title { font-size: 64px; margin: 0 0 16px; color: #fff !important; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+.module__overlay p { font-size: 24px; margin: 4px 0; color: #fff; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
+
+/* 2. СЕТКА 3Х2 (Ограничиваем ширину, чтобы не была огромной) */
+@media (min-width: 769px) {
+  .module .gallery-carousel__track {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px; /* Вот оно, ограничение размера! */
+    margin: 40px auto; /* Центрируем */
+    padding: 0 20px;
+    overflow: visible;
+  }
+  
+  .module .gallery-carousel__item {
+    flex: none;
+    width: 100%;
+    height: auto;
+    opacity: 1 !important;
+  }
+  
+  .module .gallery-carousel__item img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+/* 3. ТЕКСТ (Ограничиваем ширину для читаемости) */
+.module__description {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1e2a12;
+}
+.module__description p {
+  margin-bottom: 16px;
+}
+
+/* 4. ТАБЛИЦА (Зеленые грани) */
+.module__pricing { 
+  max-width: 800px; 
+  margin: 0 auto 40px; 
+  padding: 0 20px;
+  overflow-x: auto; 
+}
+.module__pricing table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  background: #fff; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+  border: 2px solid #a8e07a; /* Зеленая внешняя грань */
+}
+.module__pricing th, 
+.module__pricing td { 
+  padding: 16px; 
+  border: 1px solid #a8e07a; /* ЗЕЛЕНЫЕ ГРАНИ МЕЖДУ ЯЧЕЙКАМИ */
+  text-align: left;
+}
+.module__pricing th { 
+  background: #f5f5f5; 
+  font-size: 18px; 
+}
+.module__pricing td { 
+  font-size: 16px; 
+}
+
+/* 5. Кнопка (оставляем как было) */
+.module__cta { text-align: center; margin-bottom: 60px; }
+.module__button { display: inline-block; background: #ff6a4d; color: #fff !important; padding: 18px 44px; border-radius: 40px; font-weight: 700; text-decoration: none !important; box-shadow: 0 6px 20px rgba(0,0,0,0.25); transition: transform 0.2s, background 0.2s; }
+.module__button:hover { background: #ff8168; transform: translateY(-2px); }
+
+/* 6. Мобилка (возвращаем карусель) */
+@media (max-width: 768px) {
+  .module__bg { height: 40vh; }
+  .module__title { font-size: 32px; }
+  .module__overlay p { font-size: 16px; }
+  
+  .module .gallery-carousel__track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 15px;
+    padding: 0 calc(50vw - 42.5vw); 
+    margin: 40px 0;
+  }
+  .module .gallery-carousel__item {
+    flex: 0 0 85vw; 
+    height: 250px;
+    scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1 !important;
+  }
+  .module .gallery-carousel__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .module__pricing th, .module__pricing td { padding: 12px; font-size: 14px; }
+}
+
 /* ── ФИНАЛЬНАЯ ЗАЧИСТКА ── */
 h2 { border-top: none !important; }
 h2 + h2 { margin-top: 0 !important; }
