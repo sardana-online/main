@@ -594,10 +594,10 @@ h1, h2, h3, h4 {
   .module .gallery-carousel__track {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 40px;
     max-width: 1200px;
     margin: 40px auto;
-    padding: 0 40px;
+    padding: 0 20px;
     overflow: visible;
   }
   .module .gallery-carousel__item {
