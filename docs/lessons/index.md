@@ -126,6 +126,7 @@ title: Обучающие модули
       <div class="gallery-carousel__item"><img src="/images/37.jpg" alt=""></div>
     </div>
   </div>
+</section>
 
 <!-- ═══════════════ МОДУЛЬ 4: МАГИЧЕСКИЙ КУБ ═══════════════ -->
 <section class="module">
@@ -160,14 +161,15 @@ title: Обучающие модули
       <div class="gallery-carousel__item"><img src="/images/46.jpg" alt=""></div>
     </div>
   </div>
+</section>
 
 <!-- ═══════════════ МОДУЛЬ 5: НИКТО НЕ ЗАБЫТ ═══════════════ -->
 <section class="module">
   <div class="module__hero">
     <a href="#" class="module__hero-link">
-      <img src="/images/50.jpg" alt="Золотой дракон" class="module__bg">
+      <img src="/images/50.jpg" alt="Никто не забыт" class="module__bg">
       <div class="module__overlay">
-        <h2 class="module__title">Золотой дракон</h2>
+        <h2 class="module__title">Никто не забыт</h2>
         <p>Уровень сложности ⭐⭐⭐⭐⭐</p>
         <p>Техника "Ндебеле"</p>
         <p>Блок состоит из 5 мастер-классов</p>
@@ -205,4 +207,5 @@ title: Обучающие модули
       </tbody>
     </table>
   </div>
+  <div class="module__cta"><a href="#" class="module__button">получить бесплатный урок</a></div>
 </section>
