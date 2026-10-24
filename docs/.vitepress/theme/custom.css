@@ -539,7 +539,7 @@ h1, h2, h3, h4 {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   СТРАНИЦА МОДУЛЕЙ (ПОЛНОСТЬЮ ИСПРАВЛЕННАЯ)
+   СТРАНИЦА МОДУЛЕЙ 
    ═══════════════════════════════════════════════════════════ */
 
 /* Убираем ограничение ширины и отступы у контейнера */
@@ -553,7 +553,7 @@ h1, h2, h3, h4 {
 .module {
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding: 60px 0;
+  padding: 0 0 60px 0;
   background: #e0ffa0;
   border-bottom: 4px solid #fff;
 }
@@ -660,10 +660,28 @@ h1, h2, h3, h4 {
 
 /* 6. Мобилка */
 @media (max-width: 768px) {
-  .module__bg { height: 60vh; } /* На мобилке тоже повыше */
+  .module__bg { height: 60vh; }
   .module__title { font-size: 32px; }
   .module__overlay p { font-size: 16px; }
   
+  /* Таблица на мобилке */
+  .module__pricing {
+    padding: 0 10px; /* Чуть меньше отступы по бокам */
+  }
+  
+  .module__pricing table {
+    table-layout: auto; /* Убираем жесткую сетку, пусть колонки подстраиваются */
+  }
+  
+  .module__pricing th, 
+  .module__pricing td { 
+    padding: 8px; /* Уменьшаем отступы внутри ячеек */
+    font-size: 13px; /* Уменьшаем шрифт */
+    word-wrap: normal; /* Разрешаем нормальный перенос */
+    hyphens: auto; /* Автоматические переносы, если надо */
+  }
+  
+  /* Остальные стили для карусели (не трогаем) */
   .module .gallery-carousel__track {
     display: flex;
     overflow-x: auto;
@@ -690,8 +708,6 @@ h1, h2, h3, h4 {
     object-fit: contain;
     display: block;
   }
-  
-  .module__pricing th, .module__pricing td { padding: 12px; font-size: 14px; }
 }
 
 /* ── ФИНАЛЬНАЯ ЗАЧИСТКА ── */
